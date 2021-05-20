@@ -1,0 +1,9 @@
+syntax = "proto3";
+import "Fingerprint.proto";
+package OpenFinger;
+
+message VerificationRequestOlejarnikova{
+	int32 requestId = 1;
+	string login = 2; // meno pouzivatela v DB voci ktoremu sa verifikuje
+	Fingerprint fingerprint = 3; // odtlacok ktory sa ide verifikovat
+}
