@@ -2,7 +2,23 @@ syntax = "proto3";
 import "Fingerprint.proto";
 package OpenFinger;
 
+// message representing an intermediate output of 
+// preprocessing library
+
+message PreprocessingResult{
+	string info = 1;
+	Fingerprint fingerprint = 2;
+}
+
 // message specifying preprocessing OpenFinger response
 message PreprocessingResponse {
-	repeated Fingerprint results = 1; // array of preprocessing results (images after individual processing stages)
+	repeated PreprocessingResult results = 1; // array of preprocessing results (images after individual processing stages)
 }
+
+// Results:
+// 	*imgQualityMap ... results[0]
+// 	*imgContrastEnhanced ... results[1]
+// 	*imgOrientationMap ... results[2]
+// 	*imgEnhanced ... results[3]
+// 	*imgBinarized ... results[4]
+// 	*imgSkeleton ... results[5]
