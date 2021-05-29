@@ -1,7 +1,9 @@
 syntax = "proto3";
+import "Fingerprint.proto";
 import "Level2Vector.proto";
 package OpenFinger;
 
 message ExtractionResponse {
   Level2Vector level2vector = 1;
+  Fingerprint extraction_image = 2;
 }
